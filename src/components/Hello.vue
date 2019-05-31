@@ -9,17 +9,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      text: "Hello"
-    };
-  },
-  computed: {
-    textUpper() {
-      return this.text.toUpperCase();
-    }
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+@Component
+export default class Hello extends Vue {
+  private text: string = "Hello";
+  get textUpper() {
+    return this.text.toUpperCase();
   }
-};
+}
 </script>
